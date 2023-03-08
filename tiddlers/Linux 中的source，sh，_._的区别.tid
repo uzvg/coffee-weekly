@@ -1,0 +1,35 @@
+created: 20201219035254629
+modified: 20201219095954146
+tags: Linux基础
+title: Linux 中的source，sh，"."的区别
+type: text/vnd.tiddlywiki
+
+```
+⇒ cat test   
+#!/bin/bash
+
+echo "hello world"
+today=`date +%F`
+alias currentDir='pwd'
+echo `currentDir`
+```
+
+```
+⇒ source test
+hello world
+/home/whoami/Projects/gitTest
+```
+
+```
+⇒ sudo chmod u+x test
+⇒ ./test 
+hello world
+./test: line 6: currentDir: command not found
+```
+
+* `source`命令是在`当前shell`内去读取，并执行，不需要有`执行权限`
+* `source`命令可以简写为`.`，如`. test`，中间是有空格的
+* `sh`命令是打开一个`子shell`去读取，不需要`执行权限`
+* `./`命令是打开一个`子shell`去读取，但需要`执行权限`，也就是在执行之前，用`chmod u+x test`赋予其`执行权限`
+* 另外，使用`./`来执行的文件里有`alias`语句的话，`shell`不会把`alias`别名拓展成对应的命令，`source`命令则仍然有效
+

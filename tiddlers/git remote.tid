@@ -1,0 +1,25 @@
+created: 20201205060030169
+modified: 20201212093444425
+tags: Git
+title: git remote
+type: text/vnd.tiddlywiki
+
+* 要关联一个远程库，使用命令`git remote add origin https://github.com/username/repo.git`
+
+* 关联后，使用`git push --set-upstream origin master`或者`git push -u origin master`第一次推送`master`分支的所有内容。
+
+* 此后就可以使用命令`git push origin master` 推送最新修改
+
+* `git remote` 查看远程库的信息
+
+* `git remote -v`显示更详细的信息
+
+* `git push origin master`推送本地分支到远程
+
+** `origin`是默认的远程仓库的名称，该命令将该分支上的所有本地提交都推送到远程库。推送时，要指定本地分支，这样，Git 就会将该分支推送到远程库对应的远程分支上。也可以用类似`git push origin dev`的方式 推送其他分支。
+
+* 创建远程`origin`的`dev`到本地，`git checkout -b dev origin/dev`
+
+* `git push origin dev`,将本地`dev`分支推送到远程仓库。
+
+*  `git branch --set-upstream=origin/dev dev` 关联本地`dev`分支和远程`dev`分支。

@@ -1,0 +1,122 @@
+created: 20201204081024474
+modified: 20201211112406577
+tags: Git
+title: git基础
+type: text/vnd.tiddlywiki
+
+!! 文件的状态周期变化
+
+[img[文件的周期状态|https://zerolaboratory.coding.net/p/imgstore/d/imgstore/git/raw/master/Figure8.png]]
+
+!! 检查当前文件状态
+
+```
+git status
+```
+
+!! 跟踪新文件或者暂存已修改的文件
+
+```
+git add File
+```
+
+!! 状态简览
+
+```
+git status -s
+git status --short
+```
+
+* `git status` 命令的输出十分详细
+* `git status -s` 的选项可以缩短命令的输出
+
+```
+$ git status -s
+M README
+MM Rakefile //添加到暂存区中再修改
+A lib/git.rb //新添加到暂存区中的文件
+M lib/simplegit.rb //修改过的文件
+?? LICENSE.txt  //新添加未跟踪的文件
+```
+
+!! 查看已暂存和未暂存的修改
+
+* `git diff` 显示尚未暂存的文件的改动
+* `git diff --staged` 显示已暂存文件与最后一次提交的文件差异
+* `git diff --staged`与`git diff --cached`是同义词
+
+!! 提交更新
+
+* `git commit -m "commit content"` 提交更新
+* `git commit -am "commit content"` 自动将所有跟踪过的文件暂存进来一起提交
+
+!! 移除文件
+
+*要从git中移除某个文件，必须先从暂存区域删除，然后提交，可以用`git rm`来完成此项工作，并从工作目录中删除指定的文件。
+
+```
+gitTest|master ⇒ git rm test 
+rm 'test'
+gitTest|master⚡ ⇒ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    test
+
+```
+
+* `git rm File`的效果相当于`rm File`跟`gir add/rm File`，然后下次提交时就不会跟踪该文件了。 
+* 当被跟踪的文件被修改后，没有被添加到暂存区，而直接`git rm`时，会出现错误，此时要使用强制删除选项`git rm -f`
+
+```
+gitTest|master⚡ ⇒ git rm test 
+error: the following file has local modifications:
+    test
+(use --cached to keep the file, or -f to force removal)
+gitTest|master⚡ ⇒ git rm -f test 
+rm 'test'
+gitTest|master⚡ ⇒ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    test
+
+
+```
+* 当我们想把文件从仓库中移除，但仍想保留在工作目录中。也就是说想让文件保留在磁盘里，但是并不想让Git继续追踪。这在我们忘记添加`.gitignore`文件时尤其有用，我们可以用`git rm --cached File`
+
+```
+gitTest|master ⇒ git rm --cached test 
+rm 'test'
+gitTest|master⚡ ⇒ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    test
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	test
+
+```
+
+!! 移动文件
+
+*要在git中对文件改名，可以用`git mv file_from file_to`
+```
+gitTest|master ⇒ git mv test newFile
+gitTest|master⚡ ⇒ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	renamed:    test -> newFile
+
+```
+
+*本质上，`git mv`相当于运行了以下三条命令
+
+```
+mv test newFile
+git rm test
+git add newFile
+```

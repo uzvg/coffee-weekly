@@ -1,0 +1,62 @@
+created: 20201219055729240
+modified: 20201221044622057
+tags: shell脚本
+title: shell中的数值计算
+type: text/vnd.tiddlywiki
+
+shell中的数值计算有较多的情况，很容易弄混淆，主要有以下几种情况：
+
+!! bash shell中的整数数值计算
+
+直接在shell中使用的数值计算有两种形式：
+
+1. `$[`expressioin`]`
+
+```
+val=$[1+2]
+echo $val
+
+val1=$[$val * 2]
+echo $val1
+
+val2=$[$val1 * ($val-$val1)]
+echo $val2
+```
+
+* 在使用方括号计算公式时，不用担心shell会误解乘号或其他符号。shell知道他们不是通配符，因为它在方括号内。
+
+```
+val1=100
+val2=45
+val3=$[$val1 / $val2]
+echo $val3
+
+# the final result is 2
+```
+
+2. `((`expression`))`
+
+这种形式本来用于`test`条件测试中，属于`if-then`的高级特性，该命令允许`高级数学表达式`被放入比较中，但也可额外用于bash中的数值运算，同样地，只能用于简单的算术运算，`不能进行浮点运算`。
+
+```
+=> ((val=100/45))
+=> echo $val
+2
+```
+
+```
+$ cat test
+val1=10
+if(( $val2 **2 > 90))
+then
+    (( val2 = $val2 ** 2 ))
+    echo "The square of $val1 is $val2"
+fi
+
+$ ./test
+The square of 10 is 100
+```
+
+* bash shell 数学运算只支持整数运算，不支持浮点运算。
+
+!! bash shell中的浮点数值运算

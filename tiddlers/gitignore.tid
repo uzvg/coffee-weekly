@@ -1,0 +1,21 @@
+created: 20201205114743099
+modified: 20201211112445312
+tags: Git
+title: gitignore
+type: text/vnd.tiddlywiki
+
+`.gitignore`用来指定不被git所追踪的文件
+
+`.gitignore`文件中添加工作区域中不被git忽略的文件名
+
+* 需要注意的是，一旦文件被git所追踪，然后直接添加到`.gitignore`文件中是不管用的，如果要让git忽略某些已经被git所追踪的文件，那么需要先让git停止追踪这些文件。
+
+```
+git rm --cache File
+nvim .gitignore
+git status
+```
+
+* 简言之，`git rm --cached FIle`的作用是:让本次修改仍然保留在工作区域中，但却不被git所追踪。
+
+* 文件一旦被追踪，就不能被直接添加到`.gitignore`文件中。

@@ -1,0 +1,23 @@
+caption: fd---文件搜索神器
+created: 20230302153246519
+modified: 20230303095101426
+tags: Linux基础
+title: fd
+type: text/vnd.tiddlywiki
+
+!!! 命令格式：
+
+`fd [-HIEsiaLp0hV]  [pattern] [path...]`
+
+!!! 命令参数：
+
+* `-d`  depth 
+* `-t`  filetype 
+* `-e`  ext
+* `-E` exclude
+* `-c` when
+* `-j` num
+* `-x` cmd
+
+!!! 使用范例：
+

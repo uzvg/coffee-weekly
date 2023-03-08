@@ -1,0 +1,16 @@
+created: 20201203095605294
+modified: 20201211082220885
+tags: Git
+title: git stash
+type: text/vnd.tiddlywiki
+
+git只能在分支上的工作区干净的时候才能切换分支，为了不用提交当前完成的修改，又能保持工作区的干净，可以先用`git stash`储存现场，再切换分支
+
+```
+git stash //储存当前工作现场
+git stash list// 查看储存的工作现场
+git stash apply //恢复储存的工作现场
+git stash drop //删除储存的工作现场
+git stash pop //先恢复后删除
+git stash apply stash@{0} //恢复指定的stash
+```

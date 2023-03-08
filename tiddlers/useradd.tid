@@ -1,0 +1,16 @@
+created: 20201212090711782
+modified: 20230303095119203
+tags: Linux基础
+title: useradd
+type: text/vnd.tiddlywiki
+
+```
+useradd -m -g users -G wheel -s /usr/bin/bash username
+```
+* `-m` 相当于`--create-home`,create the user's home directory if it does not exist 
+
+* `-g`相当于`--gid GROUP`, the group ID for a new user's initial group
+
+* `-G`相当于`--groups GROUP1[GROUP2..]`,A list of supplementary groups which the users is also of a member of
+
+* `-s`相当于`--shell SHELL`,the name of user's login shell

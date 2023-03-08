@@ -1,0 +1,48 @@
+created: 20201211065025425
+modified: 20201213072913193
+tags: Git
+title: git 版本回退
+type: text/vnd.tiddlywiki
+
+在git仓库中输入`git log --pretty=oneline --graph --abbrev-commit`查看git的历史提交，找到每次提交的`commit id`
+
+```
+gitTest|master ⇒ git log --pretty=oneline --graph --abbrev-commit | cat
+*   a4bc822 make some change
+|\  
+| * 5ef06c7 make some change
+* | f85873a make some change
+|/  
+* 7925cc0 make some change
+*   2e7fb45 Merge branch 'testing'
+|\  
+| * e8848af modification on branch testing
+* | 81c0309 merge branch production
+* | af304b0 modification on branch production
+* | d242761 add file a
+|/  
+* 7a61586 modified README on branch testing
+* ca82a6d changed the verison number
+* 085bb3b removed unnecessary test code
+* a11bef0 first commit
+```
+
+在git中，用`HEAD`表示当前版本，用`HEAD^`表示上一个版本，上上一个版本就是`HEAD^^`，前100个版本是`HEAD~100`。
+
+回到上一个版本：
+
+```
+git reset --hard HEAD^
+```
+回退至任意版本：
+
+```
+git reset --hard commit_id
+```
+
+回退至先前版本后，又想回到之前较新的版本,git提供了一个命令来记录输入的每一次命令
+
+```
+git reflog
+git reset --hard commit_id
+```

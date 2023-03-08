@@ -1,0 +1,13 @@
+created: 20201202115625706
+modified: 20201219100142603
+tags: Linux基础
+title: sed
+type: text/vnd.tiddlywiki
+
+''sed替换''
+
+```
+sed -i 's/dark/light/' Somefile
+sed -n 's/dark/light/p' Somefile
+sed -i '/background/s/light/dark/' Somefile
+```

@@ -1,0 +1,47 @@
+created: 20201205060354578
+modified: 20201212093138059
+tags: Git
+title: git branch
+type: text/vnd.tiddlywiki
+
+!! 创建分支
+
+`git branch testing`
+
+!! 查看分支
+
+* `git branch`通常也可以用来查看分支
+* `git branch -v` 查看分支并查看每个分支的最后一次提交
+
+!! 切换分支
+
+`git checkout testing`
+
+`git switch testing`
+
+!! 创建并切换分支
+
+`git checkout -b testing`
+
+`git switch -c testing`
+
+!! 删除分支
+
+`git checkout -D testing`
+
+`git checkout -d testing`
+
+!! 分支合并
+
+* `git checkout master` 切换到想要合并其他分支的分支上
+* `git merge testing` 合并`testing`分支到`master`分支上
+
+!! 快进合并
+
+>当你试图合并两个分支时, 如果顺着一个分支走下去能够到达另一个分支,那么 Git 在合并两者的时候, 只会简单的将指针向前推进(指针右移),因为这种情况下的合并操作没有需要解决的分歧——这就叫做 “快进(fast-forward)”。
+
+git默认使用`Fast-forward`来合并分支，但这种方式可能会在分支合并之后丢失分支信息。如果强制禁用`Fast-forward`,git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。
+
+```
+git merge --no-ff -m "merge with no Fast-forward" dev
+```

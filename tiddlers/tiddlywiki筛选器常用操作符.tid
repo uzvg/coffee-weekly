@@ -1,0 +1,76 @@
+created: 20230303041306105
+modified: 20230305164141892
+tags: tiddlywiki
+title: tiddlywiki筛选器常用操作符
+type: text/vnd.tiddlywiki
+
+tiddlywiki的筛选器操作符非常丰富，没有必要全部掌握，这里我们只需要了解一些常用的操作符即可，其他操作符用的时候再查[[文档|https://tiddlywiki.com/#Filter%20Operators]]也来得及。
+
+!! Links
+
+* `backlinks[]`:获取链接到输入tiddler的所有tiddler
+** 如：`[[filter]backlinks[]]`获取所有链接到标题为filter的所有tiddler
+* `links[]`：获取输入tiddler所链接的所有tiddler
+** 如：`[[filter]links[]]`获取标题为filter的tiddler中提到的所有其他tiddler
+
+!! Tags
+
+* `tag[X]`：获取所有被打上"X"标签的tiddler
+** 如：`tag[tiddlywiki]`获取所有具有"tiddlywiki"标签的tiddler
+* `tagging[X]`：获取所有以输人tiddler为标签的tiddler
+** 如：`[[tiddlywiki]tagging[]]`获取所有以`tiddlywiki`为标签的tiddler
+** `[tag[Linux]tagging[]]`：这个运行分为两步
+*** 第一步：`tag[Linux]`,筛选出以Linux为标签的tiddler，如`Linux基础`,`shell脚本`
+*** 第二步：`[tag[linux]tagging[]]`,筛选出以`Linux基础`，`shell脚本`为标签的tiddler
+
+!! Fields:
+
+* `field:fieldname[value]`: 查询所有被输入的tiddler中field名为:`fieldname`，且field值为`value`的tiddler。
+** //例如//: `[field:phone[888-555-1234]]` 将会返回`张三`，因为只有`张三`的电话号码为`888-555-1234`
+** 因为经常使用，所以可以简写为`fieldname[value]`,只要你的field名跟现有的过滤器操作符不冲突即可，(如：`backlinks`, 这种情况下，你只能使用 `field:backlinks` 来获取该field的值, 因为它跟现有的过滤器操作符`backlinks`相重合，所以要使用field来指明这是一个fieldname，而不是操作符).
+* `contains:fieldname[value]`: 跟`field:`差不多, 但会将该field当成是一个列表，而所筛选的值不过是列表中的一个。
+** //例如//: `[contains:family[JohnDoe]]`将会返回`JaneDoe` 和 `EmilyDoe`，因为这两个都是`JohnDoe`的家庭成员。
+** contains 筛选的是列表中的一个值，而不是直接搜索列表中的字符串
+
+比如一个列表中的值为:`[[Zhang San]] Zhang San`，
+反正选出来的是确定的值，而不是字符串
+
+** 注意contains跟field的不同：contains会返回包括
+
+* `has[fieldname]`: 筛选出含有field名为`fieldname`且值非空的tiddler。
+** //例如//: `[tag[Contact]!has[phone]]` 将会筛选出我们忘记添加电话号码的联系人。
+** 筛选过程中, TiddlyWiki会将fieldname存在，但field值为空的tiddler视为''该field''不存在。
+* `search:field1,field2[mysearch]`: 筛选出含有`field1`或`field2`，且符合`mysearch`查询模式的tiddler。
+** 跟`field1`跟`field2`类似的后缀的数量并没有限制，相互用逗号分开。
+** 单个后缀符号👉`*`，会搜索给定tiddler的所有`fields`。
+** 如果没有提供任何后缀，则会默认搜索`tags`，`title`和`text`fields的值。
+** Multiple words in the search query are searched separately with all words required to be somewhere in the text, and case is ignored, so that `my search` will find the phrase “Search my wiki”, but not “Search here”. You can change this behavior by adding an additional suffix; see the [[documentation|https://tiddlywiki.com/#search%20Operator]] for details.
+
+!! 其他：
+
+* `count[]`: 输出通过筛选的tiddler的数量
+** //例如//: `[tag[Meeting]count[]]` 将会返回 `3` 如果我们有三个tidd被打上`Metting`的标签的话。
+* `sort[field]`: 根据指定`field`的值排序输入的tiddler。
+** //例如//: `[tag[Meeting]sort[at]]` 将会把所有会议按从早到晚的顺序排序。
+** 排序不分大小写，大写`A`跟小写`a`会被认为是同等顺序。
+** 在`sort`前添加符号`!` 表示逆序排序。
+** 除了以指定的field排序, 只写 `sort[]`,将会默认按照标题排序。
+* `get[field]`: 获取输入tiddler的指定field的值。
+** //例如//: `[[JaneDoe]get[email]]` 将会输出 Jane的邮箱地址。
+
+!! 练习：
+
+* 获取当前tiddlywiki的所有tiddler的数量：`[count[]]`
+
+* 获取系统tiddler的数量：`[is[system]count[]]`
+
+* 哪些tiddler中引用了名为`Filters`的tiddler：`[[Filters]backlinks[]]`
+
+* 以首字母排序`Linux基础`的笔记：`[tag[Linux基础]sort[]]`
+
+* 搜索`text`field中有`筛选`跟`搜索`的tiddler: `[search:text[筛选 搜索]]`
+
+** 也可以直接`[search[筛选 搜索]]`
+
+** `[!is[system]search:*[JohnDoe]]`
+

@@ -1,0 +1,15 @@
+created: 20230302141920710
+modified: 20230302142139134
+status: pending
+tags: Linux基础 ssh
+title: ssh密钥
+type: text/vnd.tiddlywiki
+
+!!! 产生密钥
+
+```zsh
+ssh-keygen -t rsa -C "youremail@xx.com"
+cd ~/.ssh
+```
+`id_rsa`私钥
+`id_rsa.pub`公钥

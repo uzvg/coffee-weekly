@@ -1,0 +1,30 @@
+created: 20200615040038546
+modified: 20201219100158527
+tags: Linux基础
+title: tar
+type: text/vnd.tiddlywiki
+
+! tar 
+
+*  `-x`:解压压缩包
+* `-c`:创建一个压缩包
+* `-v`:--verbose
+* `-f`:--file，指定文件
+* `-z`:gzip 压缩包
+* `-j`:bzip2压缩包
+
+```
+tar -zcvf archlieve.tar.gz Files //创建gzip压缩包
+tar -jcvf archlieve.tar.bz2 Files  //创建bzip2压缩包
+tar -ztvf archieve.tar.gz //列出gzip压缩包中的文件
+tar -jtvf archieve.tar.bz2 //列出bzip2压缩包中的文件
+tar -zxvf archieve.tar.gz -C DIR //解压gzip文件
+tar -jxvf archieve.tar.bz2 -C DIR //解压bzip2文件
+```
+
+! zip
+
+```
+zip FileName.zip FileList  //压缩
+unzip FileName.zip -d DIR  //解压缩
+```

@@ -1,0 +1,11 @@
+created: 20201211082223775
+modified: 20201213072848427
+tags: Git
+title: git cherry-pick
+type: text/vnd.tiddlywiki
+
+```
+git cherry-pick commit_id
+```
+
+将特定的提交复制到当前分支

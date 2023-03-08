@@ -1,0 +1,56 @@
+caption: tiddlywiki常用组件
+created: 20230303072436851
+modified: 20230304042645827
+tags: tiddlywiki
+title: widget
+type: text/vnd.tiddlywiki
+
+链接
+
+`<$link to="cut">a link to the Filters section</$link>`
+
+* 没有任何参数的情况下：`<$link />`链接到当前tiddler
+
+列表：
+
+```html
+<$list filter="[tag[tiddlywiki]]"></$list>
+```
+
+<$list filter="[tag[Linux]!sort[at]]"> 
+<<currentTiddler>>
+</$list>
+
+<$list filter="[tag[Linux]!sort[at]]">
+  <<currentTiddler>><br>
+</$list>
+
+<ul>
+    <$list filter="[tag[Linux]!sort[at]]">
+        <li><<currentTiddler>></li>
+    </$list>
+</ul>
+
+---
+<ul>
+    <$list filter="[tag[Linux]!sort[at]]">
+        <li><$link to=<<currentTiddler>>><<currentTiddler>></$link></li>
+    </$list>
+</ul>
+---
+
+Pending List
+
+<ul style="color: orange;">
+  <$list filter="[status[pending]]">
+    <li style="color:orange;">
+       <$link to=<<currentTiddler>>><<currentTiddler>>
+        </$link>
+    </li>
+  </$list>
+</ul>
+
+<ul style="color: orange;">
+    <li>Item 1</li>
+    <li>Item 2</li>
+</ul>

@@ -1,0 +1,34 @@
+created: 20201203100818078
+modified: 20230302142050389
+tags: Git
+title: git config
+type: text/vnd.tiddlywiki
+
+!!! 1. 对所有用户生效
+
+```
+git config --system user.name <username>
+git config --system user.email <useremail>
+git config --system core.editor <youreditor>
+```
+
+注：此时git的配置文件位于`/etc/gitconfig`
+
+!!! 2. 只对系统中当前用户用户
+
+```
+git config --global user.name <yourname>
+git config --global user.email <youremail>
+git config --global core.editor <youreditor>
+```
+
+注：此时git的配置文件位于`~/.gitconfig`
+
+!!! 3. 查看git配置文件
+
+```
+#查看所有的环境变量
+git config --list
+# 查看用户名,其他类似
+git config user.name 
+```

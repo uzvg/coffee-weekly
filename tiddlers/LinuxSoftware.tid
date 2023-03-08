@@ -1,0 +1,21 @@
+caption: Linux软件集
+created: 20230303045111798
+modified: 20230303231619862
+tags: Linux
+title: LinuxSoftware
+type: text/vnd.tiddlywiki
+
+!!! Linux下有趣的软件：
+
+<ul>
+<$list filter=[tag[LinuxSoftware]tag[Interesting]]>
+  <li>
+       <$link to=<<currentTiddler>>> <<currentTiddler>> 
+
+      </$link>
+  </li>
+</$list>
+</ul>
+
+
+!!! 常用软件的Linux解决方案：

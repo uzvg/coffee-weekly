@@ -1,0 +1,19 @@
+created: 20230303094750834
+modified: 20230305170002082
+tags: LinuxSoftware Interesting
+title: ncdu
+type: text/vnd.tiddlywiki
+
+ncdu是Linux下一个非常好用的磁盘占用分析工具
+
+!! 安装：
+
+```zsh
+sudo pacman -S ncdu
+```
+
+!! 使用：
+
+```zsh
+ncdu
+```

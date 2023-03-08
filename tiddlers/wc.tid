@@ -1,0 +1,23 @@
+created: 20201216084940241
+modified: 20230305165739399
+status: done
+tags: Linux基础
+title: wc
+type: text/vnd.tiddlywiki
+
+`wc`是Linux的一个文本统计工具，用来统计文件的行数、字数、字节数
+
+命令格式：
+
+```zsh
+wc [OPTION] [FILE]
+```
+
+命令参数：
+
+```zsh
+-c --bytes
+-l --lines
+-m --chars
+-w --words
+```

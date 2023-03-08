@@ -1,0 +1,38 @@
+created: 20230305055652560
+modified: 20230305060703752
+tags: tiddlywiki
+title: 宏、嵌入语法总结
+type: text/vnd.tiddlywiki
+
+能在wikitext和filter中使用的表达式：
+
+[[]]
+
+<<>>
+
+{{}}
+
+{{tiddler}} text field
+{{!!field}}
+
+{{!!}} current tiddler
+
+{{tiddler##index}} data tiddler
+
+{{tiddler||Templatte}}
+
+{{||Template}}
+
+仅能在wikitext中使用的
+
+{{{ triple curly braces }}}
+
+transclude one or more tiddler using a filter then transclude them
+
+在其他的filter expression 中不能使用
+
+如果要使用，需要将保存到变量中
+
+!! 仅在宏中可以使用的：
+---
+

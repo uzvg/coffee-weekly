@@ -1,0 +1,23 @@
+created: 20201211110631299
+modified: 20201213072900310
+tags: Git
+title: git tag
+type: text/vnd.tiddlywiki
+
+* `git tag`查看标签
+
+* `git tag <tag_name>`默认标签打在最新提交的commit上
+
+* `git tag <tag_name> commit_id`将标签打在指定的标签上
+
+* `git tag -a <tag_name> -m <tag_description>`,创建带有说明的标签,`-a`指定标签名，`-m`添加标签描述
+
+* `git show <tagname>`查看标签信息
+
+* `git tag -d <tagname>` 删除标签
+
+* `git push origin <tagname>` 推送某个标签到远程
+
+* `git push origin --tags` 推送全部尚未推送到远程的标签
+
+* 先执行`git tag -d <tagname>` 删除本地标签，再执行`git push origin :refs/tags/<tagname>`  删除远程标签。

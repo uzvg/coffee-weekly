@@ -1,0 +1,9 @@
+created: 20201212092915902
+modified: 20230303095126923
+tags: Linux基础
+title: userdel
+type: text/vnd.tiddlywiki
+
+`userdel -r USERNAME`
+
+删除用户的同时，删除用户的家目录。

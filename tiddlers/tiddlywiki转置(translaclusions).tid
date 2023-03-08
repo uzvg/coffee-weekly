@@ -1,0 +1,47 @@
+author: uzvg
+created: 20230228170001677
+creator: uzvg
+modified: 20230306110811238
+modifier: uzvg
+tags: tiddlywiki
+title: tiddlywiki转置(translaclusions)
+type: text/vnd.tiddlywiki
+
+!! 什么是转置？
+
+> In the document-management-systems world, the word transclusion refers to including some other document or content at the location of the reference, and macros and variables do this just like field transclusions do.
+
+> Specifically, a field transclusion, as its name suggests, references the contents of a particular field of a tiddler. 
+
+转置是说，在引用的位置，包含一些其他文档或者内容，宏跟变量的应用也是一样。
+
+!! 转置格式：
+
+
+* 转置指定tiddler的指定field的值：`{{tiddlerName!!fieldName}}`
+
+* 如果`!!`的右面为空，则默认转置指定tiddler的`text`Field的值，即其页面正文内容: `{{tiddlerName}}`
+
+* 如果`!!`的左面为空，则转置当前tiddler的指定field的值：`{{!!fieldName}}`
+
+!! 作为参数：
+
+变量跟宏调用的值可以被传递给另一个宏，转置也一样，被转置的内容也可以作为参数传递给宏，如下：
+
+```html
+<$macrocall $name="wikipediaLink" article={{!!author}} />
+```
+
+```html
+<$macrocall $name="wikipediaLink" article={{!!wikipedia-reference}} />
+```
+
+但需要注意：
+
+假如我们想要显示某人的`friend`的`手机号码`，那么下面的操作就很容易理解：`{{ {{!!friend}}!!phone }}`
+
+* 先找到其`friend`所在的tiddler的标题，`{{!!friend}}`
+* 再通过`{{FriendName!!phone}}`的方式得到朋友的电话号码
+
+⚠️ ⚠️ ⚠️这样的操作是''`错误的`''
+

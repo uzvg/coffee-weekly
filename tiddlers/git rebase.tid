@@ -1,0 +1,9 @@
+created: 20201203095640117
+modified: 20201211110531762
+tags: Git
+title: git rebase
+type: text/vnd.tiddlywiki
+
+`git rebase`把分叉的提交历史“整理”成一条直线，看上去更直观。缺点是本地的分叉提交已经被修改过了。
+
+本地提交后，从远程仓库`git pull`，发现远程仓库被推送了新内容，导致最后的提交历史出现了分叉，此时输入`git rebase`命令，可以将其整理成一条直线，看上去更直观。

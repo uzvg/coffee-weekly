@@ -1,0 +1,46 @@
+created: 20230228082508630
+creator: uzvg
+modified: 20230305061215372
+modifier: uzvg
+tags: tiddlywiki
+title: tiddlywiki变量
+type: text/vnd.tiddlywiki
+
+!! 变量的定义：
+
+定义格式：`<$set name="VirableName" value="VirableValue">`
+
+例如：
+
+```html
+<$set name="disclaimer"
+value="(This paragraph does not represent the formal opinion of my company.)">
+将要显示的文本<<disclaimer>>
+</$set>
+```
+
+!! 变量引用：
+
+`<<virableName>>`
+
+!!! 注意：
+* 使用变量名引用变量只能使用单个单词，不能有空格，如`<<some virable>>`，这样的用法不会引用任何变量，因为空格的第之后一个单词将被解析为[[宏|Macros]]的参数，而不是整个变量名的一部分。
+
+* 而且，需要注意的是，类似于`<<"some virable">>`的用法也是无效的
+
+* 变量的引用应该在`<$set>`与`</$set>`之间，在`</$set>`之后的引用一律无效，等同于变量不存在。
+
+* 变量的作用域就是定义变量的`<$set>`与`</$set>`之间，如下：
+
+```html
+<$set name="variable" value="1">
+    <<variable>>
+    <$set name="variable" value="2">
+        <<variable>>
+    </$set>
+    <<variable>>
+</$set>
+```
+最终的输出结果是：1 2 1
+
+这个在之后的教程[[tiddlywiki宏|Macros]]中还会遇到

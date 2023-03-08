@@ -1,0 +1,40 @@
+created: 20200623052957134
+modified: 20230305154032901
+status: pending
+tags: tiddlywiki
+title: nodejs版tiddlywiki使用说明
+type: text/vnd.tiddlywiki
+
+!! 安装：
+
+```zsh
+sudo pacman -S nodejs npm
+sudo npm -g tiddlywiki
+
+# 更新
+sudo npm udpate -g tiddlywiki
+```
+
+!! 初始化：
+
+```zsh
+tiddlywiki path/to/wikiFolder --init server
+
+# 打开tiddlywiki
+tiddlywiki /path/to/wikiFolder --listen
+
+# 指定打开端口
+tiddlywiki /path/to/wikiFolder --listen port=8090
+```
+浏览器中打开：http://127.0.0.1:8080
+
+
+!! 构建部署：
+
+```zsh
+tiddlywiki /path/to/wikiFolder --build index
+```
+
+打开wiki所在根目录下的`output`文件夹，即可看见`index.html`
+
+

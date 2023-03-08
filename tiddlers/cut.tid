@@ -1,0 +1,36 @@
+caption: cut命令
+created: 20201216082626556
+modified: 20230303095303459
+tags: Linux基础
+title: cut
+type: text/vnd.tiddlywiki
+
+!!! 命令格式：
+
+`cut [OPTION] [FILE]`
+
+!!! 命令参数：
+* `-d` --delimiter=DELIM(分隔符)
+* `-f` --fields=LIST(显示的列数)
+* `-c` 字符
+* `-b` 字节
+* `-f` 字段
+
+!!! 例子：
+```zsh
+cut -d ':' -f 7 /etc/passwd | tail -n 2
+/bin/bash
+/usr/bin/git-shell
+```
+```zsh
+cut -d ':' -f 1,7 /etc/passwd
+git:/usr/bin/git-shell
+nm-openconnect:/usr/bin/nologin
+nm-openvpn:/usr/bin/nologin
+ntp:/bin/false
+polkitd:/usr/bin/nologin
+rtkit:/usr/bin/nologin
+usbmux:/usr/bin/nologin
+whoami:/bin/zsh
+
+```

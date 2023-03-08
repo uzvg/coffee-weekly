@@ -1,0 +1,10 @@
+created: 20230305021318675
+modified: 20230306110138579
+tags: TiddlywikiLittleTricks
+title: 引入外部开源字体
+type: text/vnd.tiddlywiki
+
+如何为tiddlywiki引入外部的开源字体，如霞鹜文楷？
+
+将字体托管到云服务器上，使用fontface，语法
+

@@ -1,0 +1,60 @@
+created: 20230302054734680
+creator: uzvg
+modified: 20230305155233222
+modifier: uzvg
+tags: tiddlywiki
+title: 创建目录
+type: text/vnd.tiddlywiki
+
+!! 创建目录宏：
+
+1. `toc`
+
+语法：`<<toc "Root">>`
+
+示例：`<<toc "tiddlywiki">>`
+
+筛选出所有被打上`tiddlywiki`标签的tiddler
+
+2. `toc-expandable`
+
+语法：`<<toc-expandable "root">>`
+
+示例：`<<toc-expandable "tiddlywiki">>`
+
+3. `toc-tabbed-internal-nav`
+
+语法：`<<toc-tabbed-internal-nav "root">>`
+
+用tab的形式打开内部链接
+
+4. `toc-tabbed-external-nav`
+
+语法：`<<toc-tabbed-external-nav "root">>`
+
+用story river，即独立tiddler的形式打开内部链接
+
+5. `<<toc-selective-expandable 'TableOfContents'>>`
+
+6. `<<list-links-draggable "MyTiddler">>`
+
+可拖拽的形式打开
+
+最常见的用法，就是在含有"MyTiddler"的标签上直接拖动
+
+!! 特殊field的作用：
+
+tiddlywiki中有一些特殊field，在组织content的过程中起到特殊作用：
+
+`captioin`：标题，说明；
+
+如果存在，将会替换tiddler的链接文本，但不会真正替换tiddler的title值，例如在引用时仍要用tiddler的title值。
+
+`list`：决定当前tiddler下列表的排序
+
+
+相关链接：
+
+[[Macros]]
+
+

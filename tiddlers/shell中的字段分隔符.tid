@@ -1,0 +1,32 @@
+created: 20201219081618028
+modified: 20230303145029227
+tags: shell脚本
+title: shell中的字段分隔符
+type: text/vnd.tiddlywiki
+
+1. shell中的字段分隔符由特殊的环境变量`IFS`决定
+
+2. 默认情况下，bash shell 会将以下字符当做字段分隔符
+
+* 空格
+* 制表符
+* 换行符
+
+3. 定义字段分隔符的语法
+
+*重新定义换行符为字段分隔符：`IFS=$'\n'`
+
+4. 字段分隔符的常见用法：
+
+```
+IFS.OLD=$IFS
+IFS=$'\n'
+# code block
+IFS=$IFS.OLD
+```
+
+```
+IFS=$'\n:;"
+//将换行符，冒号，分号设为字段分隔符'
+```
+

@@ -1,0 +1,89 @@
+created: 20200617011130995
+modified: 20230306115621916
+tags: Linux基础
+title: find
+tmap.id: b2d252e4-8fef-4032-aff7-8b94c9d2f5a9
+type: text/vnd.tiddlywiki
+
+!! 命令格式：
+
+`find path -option [-print] [-exec  -ok command] {}\;`
+
+!!! 按名称及正则表达式搜索：
+
+```
+# 搜索以txt结尾的文件
+find /home/username -name "*.txt"	
+# 搜索不以txt结尾的文件
+find /home/username -iname "*.txt"	
+# 搜索不以txt结尾的文件
+find /home/username ! -name "*.txt"	
+find /home/username -path "filename"
+```
+
+!!! 按类型搜索
+
+```
+find -type 类型参数
+find /home/username -type f
+```
+* `f`	普通文件	
+* `l`	链接文件
+* `d`	目录文件
+* `c`	字符文件
+* `b`	块文件
+* `s`	套接字文件
+* `p`	Fifo(先进先出)
+
+!!!  按文件大小搜索
+
+```
+#查找大小超过10k的文件
+find /home/username -size +10k 
+```
+
+* 文件大小单元：
+* `b`	块(512字节)
+* `c`	字节
+* `w`	字(2个字节)
+* `k`	千字节
+* `M`	兆字节
+* `G`	吉字节
+
+!!! 按时间戳搜索
+
+```
+find /home/username 时间戳
+```
+
+''linux 文件系统每个文件有三种时间戳：''
+
+* atime (access time)	访问时间
+* mtime(modify time)	修改时间
+* ctime(change time)	变化时间
+''时间戳有三种状态：''
+
+* +  超过时间
+* (null)	恰好是规定的时间
+* - 	在查找时间范围之内
+```
+find /home/username -mtime +7                       //查找修改时间超过7天的文件
+find /home/username -mtime -7                       //查找修改时间不超过7天的文件
+find /home/username -mtime 7                        //恰好7天前修改的文件
+```
+
+!!! 按文件权限及所有权搜索
+
+```
+find /home/username -perm 777
+find /home/username ! -perm 777
+find /home -user username
+find / -group groupname
+```
+
+!!! 基于目录进行深度搜索
+
+```
+find /home/username -maxdepth 3               //查找当前目录下向下最大深度为3的文件
+find /home/username -mindepth 3               //查找当前目录下向下最小深度为3的文
+```

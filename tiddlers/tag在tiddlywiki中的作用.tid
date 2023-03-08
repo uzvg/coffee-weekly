@@ -1,0 +1,26 @@
+created: 20230305064429390
+modified: 20230307174030583
+tags: tiddlywiki
+title: tag在tiddlywiki中的作用
+type: text/vnd.tiddlywiki
+
+!! 决定宏的作用域
+`$:/tags/Macro`
+
+!! 决定网页的整体布局
+
+`$:/tags/BelowStory`
+
+`$:/tags/SideBar`
+
+`$:/tags/SideBarSegment`:网站标题，副标题等
+
+!!! 创建目录
+
+!!! 添加备案
+
+!!! 手动排序
+
+!! 添加自定义`css`文件
+
+`$:/tags/Stylesheet`

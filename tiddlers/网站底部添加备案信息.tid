@@ -1,0 +1,9 @@
+created: 20230305021118798
+modified: 20230306110119693
+tags: TiddlywikiLittleTricks
+title: 网站底部添加备案信息
+type: text/vnd.tiddlywiki
+
+如何在tiddllywiki博客的底部添加工信部网站备案信息：
+
+添加`$:/tags/BelowStory`

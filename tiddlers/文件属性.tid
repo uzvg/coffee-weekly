@@ -1,0 +1,62 @@
+caption: Linux下查看文件属性
+created: 20200617004335587
+modified: 20230303095136260
+tags: Linux基础
+title: 文件属性
+type: text/vnd.tiddlywiki
+
+!!! 文件类型 
+
+1. `ls -l`
+
+* -  ordinary file 
+* -d directory file
+* -b block device file(like `/dev/sda1`,`u盘`)
+* -d char device file(like `/dev/tty1`)
+* -s socket file
+* -p pipe file 
+* -l link file
+
+2. `type`
+
+```
+type command   //查看命令类型
+type -a command //查看命令的所有类型
+```
+
+例如：
+
+```
+⇒ type -a echo
+echo is a shell builtin
+echo is /usr/bin/echo
+```
+
+* alias
+* builtin 内置命令
+* keyword 关键字
+
+3. `file`
+
+```
+file file //查看文件的类型
+```
+
+* ASCII text
+* Block Special
+* Chararcter Special
+
+4. `stat`
+
+```
+stat somefile  //查看文件的属性
+```
+
+*查看文件的属性(名称，大小，权限，atime,ctime,mtime)
+
+!! Linux 下查看文件的大小
+
+```
+ls -lh FILENAME
+du -h FILENAME
+```

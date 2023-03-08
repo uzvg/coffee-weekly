@@ -1,0 +1,71 @@
+created: 20201212032548105
+modified: 20230305165537415
+tags: LinuxSoftware Interesting
+title: taskwarrior
+type: text/vnd.tiddlywiki
+
+!! task的增、删、改、查
+
+```
+task  //相当于 task next
+task add YOURTASK //添加任务
+task task_id start //开始任务
+task task_id done //任务完成
+task task_id del //删除任务
+task task_id mod YOURTASK //修改任务
+task burndown.daily //查看任务图表
+task burndown.monthly
+task burndown. weekly
+```
+
+!! task标签
+
+```
+task add taskName +taskTag1 +taskTag2 //添加任务的同时添加标签
+task modify taskId +taskTag //为已经添加的任务添加标签
+task modify taskId -taskTag //删除任务的标签
+task +taskTag //检出具有相同标签的任务
+```
+
+!! task虚拟标签
+
+`task`的虚拟标签是`task`的内置标签，不需要额外添加
+
+```
+task +TAGGED //列出所有被打上标签的任务
+task +TODAY //列出所有今天要完成的任务
+task +LATEST //列出最新的任务
+```
+
+* 可以用`task +`补全的方式查看所有内置标签
+
+!!  task的属性
+
+!!! task内置属性
+
+* 到`task help`中查看`task`的所有内置属性
+
+```
+task 'urgency>1' //所有紧急程度大于1的任务
+task 'description~task' //所有带有tiddlywiki单词的任务
+task add taskName project:work //添加一个project属性为work的任务
+task project:work //列出所有project属性为work的任务\
+task +LATEST mod project:work //将最新添加任务的project属性修改为work
+task project.not:work //列出所有project 属性不是work 的任务
+task project.not:work mod project:life //将所有project不是work的任务改为life,这将同时影响到被删除，以及已经完成的任务
+task project.not:work status:pending mod project:life //此时只将待定任务的project属性改为life
+task projects //列出所有project
+```
+
+!!! task用户自定义属性(UDA)
+
+`uda`的数据类型：`string`,`numeric`,`date`,`duration`
+
+```
+task config uda.estimate.type numeric //添加一个estimate字段，并指定其类型为numeric
+task taskId info //查看任务的信息，此时不能直接看到新增字段
+task config uda.estimate.label 估算 //将其label设置为估算
+task show report.next //查看显示的字段
+task config report.next.columns \ id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,estimate,urgency // 将estimate字段添加到报表要显示的columns中
+task config report.next.label D,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Description,估算,Urg //添加标签
+```

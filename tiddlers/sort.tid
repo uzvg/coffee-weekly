@@ -1,0 +1,45 @@
+created: 20201216082330200
+modified: 20201219100150076
+tags: Linux基础
+title: sort
+type: text/vnd.tiddlywiki
+
+`sort -n -t ':' -k 3 /etc/passwd`
+
+* `-n`  `--numeric-sort`
+* `-k`  `--key=KEYWORD`  sort via a key
+*  `-t`  `--field-seperator=SEP`
+
+`sort`命令对大小写的排序与`test`命令刚好相反
+
+```
+cat testFile
+Testing
+testing
+```
+
+```
+sort testFile
+testing
+Testing
+```
+
+```
+cat test.sh
+val1=Testing
+val2=testing
+
+if [$val1 \> $val2]
+then
+    echo "$val1 is greater than $val2"
+else 
+    echo "$val1 is less than $val2"
+fi
+```
+
+```
+./test.sh
+Testing is less than testing
+```
+
+* 在`sort`命令中

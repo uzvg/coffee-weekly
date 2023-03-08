@@ -1,0 +1,36 @@
+created: 20200727110721841
+modified: 20230302140808755
+tags: nvim
+title: nvim剪贴板
+tmap.id: 29b59bb9-ecd5-40ad-9c93-9ea0ed312d66
+type: text/vnd.tiddlywiki
+
+''set vim clipboard''
+
+* Nvim has no direct connection to the system clipboard. Instead it depends on a ''provider'' which transparently uses shell commands to communicate with thesystem clipboard or any other clipboard "backend".
+* To ALWAYS use the clipboard for ALL operations (instead of interacting with the '+' and/or '*' registers explicitly)
+** `set clipboard+=unnamedplus`
+* The presence of a working clipboard tool implicitly enables the '+' and '*'registers. Nvim looks for these clipboard tools, in order of priority:
+*# pbcopy, pbpaste (macOS)
+*# wl-copy, wl-paste (if $WAYLAND_DISPLAY is set)
+*# xclip (if $DISPLAY is set)
+*# xsel (if $DISPLAY is set)
+* Set clipboard in gnome
+*# `sudo pacman -S wl-clipboard`
+*# ''remap keymap''
+*# < 
+<<<
+"clipboard behavior
+
+nnoremap y "+y
+
+vnoremap y "+y
+
+nnoremap yy "+yy
+
+nnoremap p "+p
+<<<
+---
+Reference:
+
+* `help clipboard`

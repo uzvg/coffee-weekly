@@ -1,0 +1,11 @@
+created: 20230302142341471
+modified: 20230302142533374
+status: pending
+tags: tiddlywiki
+title: tiddlywiki目录设置
+type: text/vnd.tiddlywiki
+
+!!! 将列表添加到sidebar:
+
+打上`$:/tags/SideBar`
+
