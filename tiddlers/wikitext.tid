@@ -1,5 +1,5 @@
 created: 20230302145111063
-modified: 20230305105512226
+modified: 20230308122714768
 status: pending
 tags: tiddlywiki
 title: wikitext
@@ -8,3 +8,12 @@ type: text/vnd.tiddlywiki
 * 插入图片
 * quote block
 * table
+
+|! A|!B|!C|!D|
+|age|before|change|delete|
+
+<<<.big-quote
+the moon, my love
+
+这里是一个大的引用块，让我们看一下效果
+<<<For jiayu

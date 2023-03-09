@@ -1,6 +1,7 @@
 caption: vim编辑器
+color: #d94b19
 created: 20230302145607559
-modified: 20230302145709755
+modified: 20230309110615329
 tags: TableOfContents
 title: nvim
 type: text/vnd.tiddlywiki
