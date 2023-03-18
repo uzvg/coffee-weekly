@@ -5,6 +5,10 @@
         "tiddlywiki/filesystem",
         "tiddlywiki/highlight"
         "tiddlywiki/highlight",
+	"tiddlywiki/codemirror",
+	"tiddlywiki/codemirror-closetag",
+	"tiddlywiki/codemirror-closebrackets",
+	"tiddlywiki/codemirror-autocomplete"
     ],
     "themes": [
         "tiddlywiki/vanilla",
