@@ -1,7 +1,7 @@
 caption: tiddlywiki宏
 created: 20230228085635319
 creator: uzvg
-modified: 20230305154237247
+modified: 20230318150747846
 modifier: uzvg
 tags: tiddlywiki
 title: Macros
@@ -29,7 +29,7 @@ https://en.wikipedia.org/wiki/$articleName$
 
 再如：
 
-```
+```html
 \define wikipediaLink(articleName)
 [[wikipedia:$articleName|https://en.wikipedia.org/wiki/$articleName$]]
 \end

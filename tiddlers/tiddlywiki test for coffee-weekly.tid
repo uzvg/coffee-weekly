@@ -1,0 +1,26 @@
+created: 20230318144927379
+modified: 20230318150602158
+tags: test
+title: tiddlywiki test for coffee-weekly
+type: text/vnd.tiddlywiki
+
+js code highlight test
+
+```js
+ var a = b + c; // Highlighted as JavaScript
+```
+
+这是一个测试，让我们看一下效果
+
+让我们看一下`zsh`的高亮测试
+
+```bash
+sudo pacman -Syyu
+vim test.sh
+whoami
+$ pacman -Syyu
+```
+
+这是一个测试，让我们看一下效果
+
+这是一个测试
