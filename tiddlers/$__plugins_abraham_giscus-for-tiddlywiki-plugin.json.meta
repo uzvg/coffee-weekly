@@ -1,0 +1,10 @@
+author: A.B. Samma
+core-version: >=5.2.5
+dependents: 
+description: A commenting system for TiddlyWiki powered by Giscus
+list: readme license changelog settings
+name: Giscus for TiddlyWiki
+plugin-type: plugin
+title: $:/plugins/abraham/giscus-for-tiddlywiki-plugin
+type: application/json
+version: 0.2.1
