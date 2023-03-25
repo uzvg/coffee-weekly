@@ -1,8 +1,8 @@
 created: 20230302040344789
 creator: uzvg
-modified: 20230302040346115
+modified: 20230325053630822
 modifier: uzvg
 title: $:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/delete
 type: text/vnd.tiddlywiki
 
-show
+hide
