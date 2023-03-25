@@ -1,5 +1,5 @@
 created: 20230303224613833
-modified: 20230305165514969
+modified: 20230322043207011
 tags: LinuxSoftware Interesting
 title: tiolet
 type: text/vnd.tiddlywiki
@@ -8,13 +8,13 @@ tiolet算是[[figlet]]的升级版，不仅能够使用figlet的所有字体文�
 
 !! 安装
 
-```zsh
+```bash
 sudo pacman -S tiolet
 ```
 
 !! 使用
 
-```zsh
+```bash
 toilet -f fonts/ivrit coffee-weekly
             __  __                                  _    _       
   ___ ___  / _|/ _| ___  ___     __      _____  ___| | _| |_   _ 

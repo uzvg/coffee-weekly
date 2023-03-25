@@ -1,18 +1,19 @@
 created: 20230303023049078
-modified: 20230305162526485
+modified: 20230321185058771
 tags: tiddlywiki
-title: tiddlywiki筛选器入门
+title: tiddlywiki筛选器
 type: text/vnd.tiddlywiki
 
 !! 运行过程说明：
 
-`filter`的运行过程就像Linux shell中的管理，所有tiddler被列在管道的左侧，经过一系列筛选(filter)，最终被从管道的右侧“吐出来”，得到最终想要得到的tiddler。
+筛选器，即`filter`的运行过程就像Linux shell中的管道，所有tiddler被列在管道的左侧，经过一系列筛选(filter)，最终被从管道的右侧“吐出来”，得到最终想要得到的tiddler。
 
-!!! 单次运行：
+!! 单次运行：
 
 # `[title[New Tiddler]]`
 
 #* 筛选出标题为`New Tiddler`的tiddler
+#* 因为很常用，所以可以被简化为`[[New tiddler]]`，即在方括号中直接输入tiddler的标题即可
 
 # `[tag[tiddlywiki]]`
 
@@ -20,21 +21,41 @@ type: text/vnd.tiddlywiki
 
 # `[links[]]`
 
-#* `links`筛选器比较特殊，它会筛选当前tiddler中被链接的所有tiddler，例如： `[title[filter]links[]]`
-
-#** 该筛选器筛选出标题为filter的tiddler中被链接到的所有tiddler，包括以`$:/`开头的系统自带的tiddler
-
-#** 排除系统自带tiddler：`[title[filter]!is[system]links[]]`
-
-
+#* 筛选当前tiddler中被链接的所有tiddler
+#* 如： `[title[New tiddler]links[]]`，筛选出标题为`New tiddler`的tiddler中被链接到的所有tiddler，包括以`$:/`开头的系统自带的tiddler
+#** 排除系统自带tiddler：`[title[New tiddler]!is[system]links[]]`
+#* 筛选出当前tiddler链接到的所有其他tiddler，`[all[current]links[]]`
 # `[backlinks[]]`
+#* 反向链接，筛选出引用了该tiddler的其他tiddler；
+#* 例如： `[[New tiddler]backlinks[]]`, 筛选出引用标题为`New tiddler`的tiddler的其他所有tiddler
 
-#* 反向链接，筛选出引用tiddler的其他所有tiddler；
-#* 例如： `[[filter]backlinks[]]`, 筛选出引用标题为`filter`的tiddler的其他所有tiddler
+!! 多次运行：
 
-!!! 多次运行：
+单次运行，找到满足所有条件的tiddler，而多次运行，可以用更复杂的逻辑筛选出更符合我们需求的tiddler
 
-!! 过滤器(filter)语法：
+可以合并使用and、or and not 条件判断
+
+!!! or 条件判断语句：
+
+```html
+[tag[Journal] [tag[Meeting]]]
+```
+
+tiddlywiki将会单独处理每次筛选运行，然后将筛选出来的结果合并起来
+
+被打上journla标签的tiddler会出现在meeting的前面
+
+也可以为每个运行添加单独的筛选步骤，如：
+
+```html
+[tag[Journal]] [tag[Meeting]contains:participants[JaneDoe]]
+```
+
+在每个筛选中间添加空格是可选的，但可以添加可读性
+
+注意，不要在筛选步骤中间添加空格
+
+!! 筛选器(filter)语法：
 
 `operator:suffix[parameter]`
 

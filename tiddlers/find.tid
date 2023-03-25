@@ -1,5 +1,5 @@
 created: 20200617011130995
-modified: 20230306115621916
+modified: 20230322045226670
 tags: Linux基础
 title: find
 tmap.id: b2d252e4-8fef-4032-aff7-8b94c9d2f5a9
@@ -11,7 +11,7 @@ type: text/vnd.tiddlywiki
 
 !!! 按名称及正则表达式搜索：
 
-```
+```bash
 # 搜索以txt结尾的文件
 find /home/username -name "*.txt"	
 # 搜索不以txt结尾的文件
@@ -23,7 +23,7 @@ find /home/username -path "filename"
 
 !!! 按类型搜索
 
-```
+```bash
 find -type 类型参数
 find /home/username -type f
 ```

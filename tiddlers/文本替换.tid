@@ -1,0 +1,35 @@
+created: 20230319142701540
+modified: 20230319145434232
+tags: tiddlywiki
+title: 文本替换
+type: text/vnd.tiddlywiki
+
+!! tiddlywiki中的文本替换
+
+先来看一个例子：
+
+假如我们有两个tiddle👉 `道家`跟`老子`，他们的关系是道家的创始人是老子，即道家所在的tiddler中的其中一个字段👉创始人的字段值是为👉老子，当我们处
+
+我们可以想到的是：
+
+`{{ {{!!创始人}}!!Number}}`
+
+但实际上，这样的写法是错误的
+
+接下来，我们再来看另一种写法：
+
+```html
+\define get-number(person)
+{{$person!!Number}}
+\end
+
+<$macrocall $name="get-number" person={{!!创始人}}/>
+```
+
+这两种写法看起来效果是一样的，但第一种是错误的，只有第二种写法能够得到正确的结果，是什么原因呢？
+
+其实是跟tiddlywiki处理宏替换文本的过程有关：
+
+* 当tiddlywiki到达$macrocall小部件时，它会扩展宏。执行此操作时，它首先查找{{!!创始人}}以获得要传递给过不断的新参数person的值。该值为老子，因此将该值传递到宏中
+* 然后tiddlywiki使用该参数值对宏的主体执行文本替换操作，将值老子转置到宏中以替换$person$占位符，该操作的结果是👉{{老子!!Number}}，该转置的结果最终将代替macrocall调用的值
+* 

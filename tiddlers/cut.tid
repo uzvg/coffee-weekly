@@ -1,6 +1,6 @@
 caption: cut命令
 created: 20201216082626556
-modified: 20230303095303459
+modified: 20230322043231629
 tags: Linux基础
 title: cut
 type: text/vnd.tiddlywiki
@@ -17,12 +17,12 @@ type: text/vnd.tiddlywiki
 * `-f` 字段
 
 !!! 例子：
-```zsh
+```bash
 cut -d ':' -f 7 /etc/passwd | tail -n 2
 /bin/bash
 /usr/bin/git-shell
 ```
-```zsh
+```bash
 cut -d ':' -f 1,7 /etc/passwd
 git:/usr/bin/git-shell
 nm-openconnect:/usr/bin/nologin

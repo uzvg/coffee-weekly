@@ -1,5 +1,5 @@
 created: 20230303035730746
-modified: 20230307152342707
+modified: 20230324064212851
 tags: $:/tags/Stylesheet
 title: $:/uzvg/Stylesheet
 type: text/vnd.tiddlywiki
@@ -19,6 +19,7 @@ div.tc-tiddler-frame {
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
+		/*background-color: rgba(228,231,230);*/
 }
 
 /*.tc-storyview-zoomin-tiddler {
@@ -27,7 +28,7 @@ div.tc-tiddler-frame {
 
 h1,h2,h3, h4, h5, h6 {
     color: <<colour tiddler-title-foreground>>;
-    font-family: "LXGW WenKai","霞鹜文楷",sans,sans-serif;
+    font-family: "霞鹜文楷","LXGW WenKai",sans,sans-serif;
 }
 
 h2:not(.tc-title) {
@@ -39,3 +40,7 @@ h2:not(.tc-title) {
 .tc-table-of-contents li li {
     line-height: 1.5rem;
 }
+
+/*div.tc-titlebar {
+  background-color: rgba(228,231,230,0.8);
+}*/

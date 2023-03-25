@@ -1,7 +1,7 @@
 color: #490110
 created: 20230302144342232
-list: nodejs版tiddlywiki使用说明 tiddlywiki目录设置 tiddlywiki筛选器入门 tiddlywiki筛选器常用操作符 Macros tiddlywiki变量 tiddlywiki添加giscus评论系统 wikitext 创建目录 tiddlywiki转置(translaclusions) tag在tiddlywiki中的作用 [[Templates and the Current Tiddler]] tiddlywiki模板 widget 宏、嵌入语法总结 系统级tiddler TiddlywikiLittleTricks
-modified: 20230309110502904
+list: nodejs版tiddlywiki使用说明 tiddlywiki目录设置 tiddlywiki筛选器 tiddlywiki筛选器常用操作符 tiddlywiki变量 Macros tiddlywiki添加giscus评论系统 wikitext 创建目录 tag在tiddlywiki中的作用 [[Templates and the Current Tiddler]] tiddlywiki模板 widget 宏、嵌入语法总结 系统级tiddler TiddlywikiLittleTricks tiddlywiki转置 在宏中使用变量 常用宏 文本替换 筛选器与转置
+modified: 20230323133245462
 tags: TableOfContents Tutorials
 title: tiddlywiki
 type: text/vnd.tiddlywiki

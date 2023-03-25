@@ -1,10 +1,7 @@
-author: uzvg
-created: 20230228170001677
-creator: uzvg
-modified: 20230306110811238
-modifier: uzvg
+created: 20230322052855247
+modified: 20230322052914069
 tags: tiddlywiki
-title: tiddlywiki转置(translaclusions)
+title: tiddlywiki转置
 type: text/vnd.tiddlywiki
 
 !! 什么是转置？
@@ -44,4 +41,3 @@ type: text/vnd.tiddlywiki
 * 再通过`{{FriendName!!phone}}`的方式得到朋友的电话号码
 
 ⚠️ ⚠️ ⚠️这样的操作是''`错误的`''
-

@@ -1,5 +1,5 @@
 created: 20230305064429390
-modified: 20230307174030583
+modified: 20230318205159287
 tags: tiddlywiki
 title: tag在tiddlywiki中的作用
 type: text/vnd.tiddlywiki
@@ -24,3 +24,12 @@ type: text/vnd.tiddlywiki
 !! 添加自定义`css`文件
 
 `$:/tags/Stylesheet`
+
+!!! 添加模板内容
+
+`$:/tags/ViewTemplate`
+
+`$:/tags/pageControls`
+
+  
+

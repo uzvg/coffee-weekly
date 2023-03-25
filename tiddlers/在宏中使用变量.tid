@@ -1,0 +1,17 @@
+created: 20230321185712372
+modified: 20230321193655893
+tags: tiddlywiki
+title: 在宏中使用变量
+type: text/vnd.tiddlywiki
+
+\define findx()
+The current of x is "<<X>>"
+\end
+
+<$set name=X value="marks the spot">
+    <<findx>>
+</$set>
+
+文本替换
+
+

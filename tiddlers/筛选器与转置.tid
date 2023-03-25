@@ -1,0 +1,48 @@
+created: 20230321185849739
+modified: 20230321192319404
+tags: tiddlywiki
+title: 筛选器与转置
+type: text/vnd.tiddlywiki
+
+两种方式：
+
+* 转置过滤器的结果到一个tiddler
+* 将转置的结果传递给筛选器
+
+!! 将筛选器的结果转置到当前tiddler中
+
+找到标签为tiddlywiki的前5个tiddler：`{{{ [tag[tiddlywiki]first[5]] }}}`
+
+结果为：
+
+{{{ [tag[tiddlywiki]first[5]]}}}
+
+更常见的用法：
+
+跟tiddlywiki有关的笔记共有<$text text={{{ [tag[tiddlywiki]count[]] }}}/>条
+
+!! 在筛选器中使用转置过来的值
+
+找到所有家庭成员的姓名跟电话号码：
+
+```html
+
+```
+
+我们不能将一个组件设置为另一个组件的属性值，如：
+
+```
+<$list filter=<$macrocall $name="myfilt" people={{!!family}}/>>
+```
+这样的写法是错误的
+
+```html
+<ul>
+    <$set name="familyfield" value={{!!family}}>
+        <$list filter="[enlist<familyfield>]">
+            <li>{{!!title}}: {{!!phone}}</li>
+        </$list>
+    </$set>
+</ul>
+```
+

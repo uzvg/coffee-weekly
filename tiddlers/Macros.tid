@@ -1,7 +1,7 @@
 caption: tiddlywiki宏
 created: 20230228085635319
 creator: uzvg
-modified: 20230318150747846
+modified: 20230323142305882
 modifier: uzvg
 tags: tiddlywiki
 title: Macros
@@ -37,142 +37,57 @@ https://en.wikipedia.org/wiki/$articleName$
 
 !!! 注意事项：
 
-* `\define`,即宏定义的开头，必须在tiddler的开头就定义，其他地方将会失效。
-
-* 单个tiddler中可以定义多个宏，但必须在`\end`之前定义，即在tiddler开头到`\end`之前可以定义多个`宏`。
-
-* 宏的定义，宏名称后并无空格，即定义宏的名称跟其参数列表的`(`之间并无空格。
-
-*  tiddllywiki对`宏替换`与`变量替换`的处理方式不同: 
+* `\define`,即宏定义的开头，必须位于tiddler的开头
+* 宏的定义，宏名称后并无空格，即定义宏的名称跟其参数列表的`(`之间并无空格
+*  tiddllywiki对`宏扩展`和`变量替换`的处理方式不同，在引用变量时，tiddlywiki并不会顾忌到变量周围的上下文，如下所示，最终结果并不会被显示为一个整体的链接：
 
 ```html
 <$set name="wikipedia" value="https://en.wikipedia.org/wiki/">
     <<wikipedia>>Aardvark
 </$set>
 ```
-
-显示效果为：<$set name="wikipedia" value="https://en.wikipedia.org/wiki/">
+结果：<$set name="wikipedia" value="https://en.wikipedia.org/wiki/">
     <<wikipedia>>Aardvark
 </$set>
 
-并没有显示为一个整体的链接，这是因为tiddlwiki在处理输出时，会单独处理变量的值，因此不会顾忌到变量周围的上下文，所有不会被显示为一个整体的链接。
-
-如果使用宏替换，则会将其显示为一个整体的链接。
-
+* 而如果使用宏替换，则会将其显示为一个整体链接
 
 !! 宏的引用：
 
 宏的引用有两种方式：
 
-!!! 方式一：
+!!! 方式一：简化方式
 
-格式：`<<宏名称 宏参数>>`
+引用格式：`<<宏名称 宏参数>>`
 
 如：`<<wikipediaLink Aardvark>>`
 
-!!! 方式二：
+!!! 方式二：宏调用组件`$macrocall`
 
-使用`$macro`组件
-
-
-!! 宏的作用域：
-
-一般情况下，宏的作用域仅限于当前tiddler，要想使宏全局起作用, 可以将新建的宏保存到一个tiddler中，并将该tiddler打上标签[[$:/tags/Macro|tag在tiddlywiki中的作用]]，则该宏即可全局使用
-
-!! 宏的参数：
-
-!!! 无参数：
-
-如下：
-
-```
-\define disclaimer()
-(This paragraph does not represent the formal opinion of my company.)
-\end
-```
-
-!!! 多参数：
-
-```
-\define wikipediaLink(articleName,linkText)
-[[$linkText$|https://en.wikipedia.org/wiki/$articleName$]]
-\end
-
-<<wikipediaLink Aardvark "Wikipedia on Aardvarks">>
-```
-
-* 如果需要调用多个参数，那么多个参数需要用`,`分开
-* 调用宏时，如果某参数的内容包含空格，需要用`""`括住该参数的内容
-
-!!! 参数内容本身含有双引号：
-
-上一个例子中，可以用`""`处理中间有空格的参数，但如果参数本身中就有`""`，该如何处理？
-
-例如：如何直接显示出`What is an "aardvark"?`
+引用格式：
 
 ```html
-\define wikipediaLink(articleName, linkText)
-[[$linkText$|https://en.wikipedia.org/wiki/$articleName$]]
-\end
+<$macrocall $name="宏名称" 参数1="参数值" 参数2="参数值"/>
 ```
-* 此时结果为：`What is an`
 
-再看：添加一层引号来保存参数内容本身中含有的`""`
+这种宏组件的调用方式，好像跟简化的调用方式没什么不同，使其实它的最大用处在于在参数值中引用其他宏调用的值。
+
+例如，如果我们想在wikipediaLink如下：
 
 ```html
-\define wikipediaLink(articleName, linkText)
-[[$linkText$|https://en.wikipedia.org/wiki/$articleName$]]
-\end
-
-<<wikipediaLink Aardvark """What is an "aardvark"?""">>
-```
-* 结果为：`What is an "aardvark"?`，显示正确
-
-!!! 调用宏时指定参数顺序及参数值：
-
-调用宏时指定参数名及参数值，那么此时参数的顺序并不重要，可以手动指定参数的顺序，如下：
-
-```
-\define wikipediaLink(articleName, linkText)
-[[$linkText$|https://en.wikipedia.org/wiki/$articleName$]]
-\end
-
-<<wikipediaLink linkText:"Wikipedia on Aardvarks" articleName:Aardvark>>
+<<wikipdeiaLink <<anotherMacro>>>>
 ```
 
-!!! 设置参数默认值：
+这种在一个宏的调用中嵌入另一个宏的方式是错误的，正确的调用方式：
 
-参数默认值是当我们不明确指定某个参数的参数值时，默认被传递给该参数的值，而当我们明确指定参数的值时，又会使用我们所指定的值，如下：
-
-```
-\define wikipediaLink(articleName, linkText:"Wikipedia Link")
-[[$linkText$|https://en.wikipedia.org/wiki/$articleName$]]
-\end
-
-<<wikipediaLink Aardvark>>
-<<wikipediaLink Aardvark "Wikipedia on ardvarks">>
+```html
+<$macrocall $name="宏名称" 参数名称=<<另外调用的宏>> />
 ```
 
-输出结果：
+⚠️ 注意：以下用法，是错误用法
 
-`Wikipedia Link`
-
-`WikiPedia on aardvvarks`
-
-⚠️: //只是模拟输出结果，并非全部真实结果，请大家自行实验//
-
-* 在定义参数名时就指定参数的默认值，此时在宏调用过程中，如果没有明确指定参数值，那么宏将使用默认值。
-
-* 指定参数默认值时，冒号后面的空格可有可无。
-
-!!! 宏调用组件`$macrocall`
-
-调用格式：
-
-* `<$macrocall $name="宏名称" 参数名称="参数值"/>`
-* `<$macrocall $name="宏名称" 参数名称=<<另外调用的宏>> />`
-** ⚠️类似这样`<$macrocall $name="宏名称" 参数名称="<<另外调用的宏>>" />`的调用，是错误的用法
-** 将宏调用或者变量引用放在引号后，会使其文本化，tiddlywiki不会展开`""`中的宏，即最终被传递给宏的参数值是`<<linktext>> `文本本身，而不是其所获得的宏调用值。
+* `<$macrocall $name="宏名称" 参数名称="<<另外调用的宏>>" />`
+** 将宏引用或者变量引用放在引号内，会使引用表达式文本化，即tiddlywiki不会展开`""`中的宏，最终被传递给宏的参数值是`<<linktext>>`文本本身，并非宏调用的结果。
 
 ```
 \define wikipediaLink(articleName, linkText)
@@ -201,6 +116,103 @@ https://en.wikipedia.org/wiki/$articleName$
 	
 </$set>
 ```
+
+!! 宏的作用域：
+
+一般情况下，宏的作用域仅限于当前tiddler，要想使宏全局起作用, 可以将新建的宏保存到一个tiddler中，并将该tiddler打上标签[[$:/tags/Macro|tag在tiddlywiki中的作用]]，则该宏即可全局使用
+
+!! 宏的参数：
+
+!!! 无参数：
+
+如下：
+
+```html
+\define disclaimer()
+(This paragraph does not represent the formal opinion of my company.)
+\end
+```
+
+!!! 多参数：
+
+```html
+\define wikipediaLink(articleName,linkText)
+[[$linkText$|https://en.wikipedia.org/wiki/$articleName$]]
+\end
+
+<<wikipediaLink Aardvark "Wikipedia on Aardvarks">>
+```
+
+* 多个参数引用用`,`分开
+* 如果参数的内容包含空格，需要用`""`括住该参数的内容
+
+!!! 参数内容本身含有双引号：
+
+上一个例子中，可以用`""`处理中间有空格的参数，但如果参数本身中就有`""`，该如何处理？
+
+* 可使用三个引号
+
+例如：如何直接显示出`What is an "aardvark"?`
+
+```
+\define wikipediaLink(articleName, linkText)
+[[$linkText$|https://en.wikipedia.org/wiki/$articleName$]]
+\end
+
+<<wikipediaLink Aardvark "What is an "aardvark"?">>
+```
+* 显示结果为：`What is an`
+
+再看：添加一层引号来保存参数内容本身中含有的`""`
+
+```html
+\define wikipediaLink(articleName, linkText)
+[[$linkText$|https://en.wikipedia.org/wiki/$articleName$]]
+\end
+
+<<wikipediaLink Aardvark """What is an "aardvark"?""">>
+```
+* 结果为：`What is an "aardvark"?`，显示正确
+
+!!! 指定参数顺序及参数值：
+
+如果在调用宏时指定了参数名及参数值，那么此时参数的顺序并不重要，可以手动指定参数的顺序，如下：
+
+```
+\define wikipediaLink(articleName,linkText)
+[[$linkText$|https://en.wikipedia.org/wiki/$articleName$]]
+\end
+
+<<wikipediaLink linkText:"Wikipedia on Aardvarks" articleName:Aardvark>>
+```
+
+比如：`<<lins-links filter:"[tag[tiddlywiki]]">>`
+
+!!! 设置参数默认值：
+
+默认值是在没有指定某参数的值时，被传递给该参数的值，如下：
+
+```
+\define wikipediaLink(articleName, linkText:"Wikipedia Link")
+[[$linkText$|https://en.wikipedia.org/wiki/$articleName$]]
+\end
+
+<<wikipediaLink Aardvark>>
+<<wikipediaLink Aardvark "Wikipedia on ardvarks">>
+```
+
+输出结果：
+
+`Wikipedia Link`
+
+`WikiPedia on aardvvarks`
+
+⚠️: //只是模拟输出结果，并非全部真实结果，请大家自行实验//
+
+* 在没有明确指定参数值的情况下，宏将使用默认值。
+* 指定参数默认值时，冒号后面的空格可有可无。
+
+
 
 注意：
 

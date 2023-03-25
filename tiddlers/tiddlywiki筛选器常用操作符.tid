@@ -1,17 +1,17 @@
 created: 20230303041306105
-modified: 20230305164141892
+modified: 20230321185546871
 tags: tiddlywiki
 title: tiddlywiki筛选器常用操作符
 type: text/vnd.tiddlywiki
 
-tiddlywiki的筛选器操作符非常丰富，没有必要全部掌握，这里我们只需要了解一些常用的操作符即可，其他操作符用的时候再查[[文档|https://tiddlywiki.com/#Filter%20Operators]]也来得及。
+tiddlywiki的筛选器操作符非常丰富，此处我们只了解一些常用的操作符，更全面的操作符可查看[[相关官方文档|https://tiddlywiki.com/#Filter%20Operators]]。
 
 !! Links
 
 * `backlinks[]`:获取链接到输入tiddler的所有tiddler
-** 如：`[[filter]backlinks[]]`获取所有链接到标题为filter的所有tiddler
+** 如：`[[New tiddler]backlinks[]]`获取所有引用即链接到标题为`New tiddler`的所有tiddler
 * `links[]`：获取输入tiddler所链接的所有tiddler
-** 如：`[[filter]links[]]`获取标题为filter的tiddler中提到的所有其他tiddler
+** 如：`[all[current]links[]]`获取标题为filter的tiddler中提到的所有其他tiddler
 
 !! Tags
 
