@@ -1,7 +1,11 @@
 color: #43170b
 created: 20230302144807215
 list: cut find grep [[Linux 中的source，sh，"."的区别]] 文件属性 Linux文件描述符 sed tar sort ssh密钥 useradd userdel wc
-modified: 20230309110624759
-tags: Linux
+modified: 20230327073156774
+tags: [[Linux workflow]]
 title: Linux基础
 type: text/vnd.tiddlywiki
+
+一些基本的Linux命令的使用方法：
+
+<<list-links filter:"[tag<currentTiddler>sort[createdat]]">>

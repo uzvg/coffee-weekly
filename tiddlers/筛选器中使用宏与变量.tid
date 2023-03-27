@@ -1,0 +1,27 @@
+created: 20230326100610355
+modified: 20230326101422572
+tags: tiddlywiki
+title: 筛选器中使用宏与变量
+type: text/vnd.tiddlywiki
+
+筛选器中不光可以使用常量，还可以使用宏与变量：
+
+!! 在筛选器使用宏
+
+
+
+!! 在筛选器使用变量
+
+```html
+<$set name="myvar" value="abc">
+  {{{ [<myvar>addsuffix[def]] }}}
+</$set>
+```
+
+效果如下：
+
+<$set name="myvar" value="abc">
+  <$text text={{{ [<myvar>addsuffix[def]] }}} />
+</$set>
+
+需要注意的是，其效果等同于：`{{{ [[abc]addsuffix[def]] }}}`

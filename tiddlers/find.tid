@@ -1,5 +1,5 @@
 created: 20200617011130995
-modified: 20230322045226670
+modified: 20230325104733352
 tags: Linux基础
 title: find
 tmap.id: b2d252e4-8fef-4032-aff7-8b94c9d2f5a9
@@ -37,7 +37,7 @@ find /home/username -type f
 
 !!!  按文件大小搜索
 
-```
+```bash
 #查找大小超过10k的文件
 find /home/username -size +10k 
 ```
@@ -52,7 +52,7 @@ find /home/username -size +10k
 
 !!! 按时间戳搜索
 
-```
+```bash
 find /home/username 时间戳
 ```
 
@@ -66,7 +66,8 @@ find /home/username 时间戳
 * +  超过时间
 * (null)	恰好是规定的时间
 * - 	在查找时间范围之内
-```
+
+```bash
 find /home/username -mtime +7                       //查找修改时间超过7天的文件
 find /home/username -mtime -7                       //查找修改时间不超过7天的文件
 find /home/username -mtime 7                        //恰好7天前修改的文件
@@ -74,7 +75,7 @@ find /home/username -mtime 7                        //恰好7天前修改的文�
 
 !!! 按文件权限及所有权搜索
 
-```
+```bash
 find /home/username -perm 777
 find /home/username ! -perm 777
 find /home -user username
@@ -83,7 +84,7 @@ find / -group groupname
 
 !!! 基于目录进行深度搜索
 
-```
+```bash
 find /home/username -maxdepth 3               //查找当前目录下向下最大深度为3的文件
 find /home/username -mindepth 3               //查找当前目录下向下最小深度为3的文
 ```

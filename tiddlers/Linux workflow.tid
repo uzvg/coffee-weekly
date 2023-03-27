@@ -1,0 +1,25 @@
+color: #355b32
+created: 20230302144256097
+list: shell脚本 Linux基础 LinuxSoftware tmux
+modified: 20230325170620207
+tags: TableOfContents
+title: Linux workflow
+type: text/vnd.tiddlywiki
+
+!! Linux基础
+
+主要是Linux下的一些常用软件/命令：
+
+<<list-links filter:"[tag[Linux基础]]" class:"multi-columns">>
+
+!! Linux Shell脚本
+
+Linux workflow怎么可以没有Shell脚本呢，同时这也是Linux中最有趣的内容。
+
+<<list-links filter:"[tag[shell脚本]]">>
+
+!! Linux软件解决方案
+
+常用软件的Linux平台解决方案。
+
+<<list-links filter:"[tag[LinuxSoftware]]">>

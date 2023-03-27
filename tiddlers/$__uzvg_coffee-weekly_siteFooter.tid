@@ -1,0 +1,22 @@
+created: 20230325151845259
+modified: 20230327073245694
+tags: $:/tags/BelowStory
+title: $:/uzvg/coffee-weekly/siteFooter
+type: text/vnd.tiddlywiki
+
+<div class="site-footer-row">
+Copyright © 2022-2023 [[uzvg|About Me]] All rights reserved <br>
+[[陇ICP备2023000286号-1|https://beian.miit.gov.cn/]] Powered by [[Tiddlywiki|https://tiddlywiki.com]]
+</div>
+
+<style>
+div.site-footer-row {
+	color: <<color muted-foreground>>;
+	text-align: center;
+}
+
+div.site-footer-row a.tc-tiddlylink, div.site-footer-row a.tc-tiddlylink-external {
+	color: <<color muted-foreground>>;
+	text-decoration: underline;
+}
+</style>

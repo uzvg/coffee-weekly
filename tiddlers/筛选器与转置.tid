@@ -1,12 +1,12 @@
 created: 20230321185849739
-modified: 20230321192319404
+modified: 20230326103129101
 tags: tiddlywiki
 title: 筛选器与转置
 type: text/vnd.tiddlywiki
 
-两种方式：
+筛选器与转置有两种结合方式：
 
-* 转置过滤器的结果到一个tiddler
+* 将筛选结果转置到tiddler中
 * 将转置的结果传递给筛选器
 
 !! 将筛选器的结果转置到当前tiddler中
@@ -21,20 +21,35 @@ type: text/vnd.tiddlywiki
 
 跟tiddlywiki有关的笔记共有<$text text={{{ [tag[tiddlywiki]count[]] }}}/>条
 
-!! 在筛选器中使用转置过来的值
+!! 将转置的结果传递给筛选器
 
-找到所有家庭成员的姓名跟电话号码：
+假如我们想给列表的形式显示`Jane`的家庭成员，我们可能想到的做法是：
+
+先定义一个宏：
 
 ```html
-
+\define myfilt(people)
+[enlist[$people$]]
+\end
 ```
 
-我们不能将一个组件设置为另一个组件的属性值，如：
+然后调用该宏：
 
+```html
+<$list filter=<<myfilt {{!!familyMems}}>> >
 ```
+
+⚠️ 但这个用法是错误的，因为简化的宏调用中不能直接使用宏转置，想要使用宏调用中使用转置的结果，必须使用`<$macrocall>`，即宏调用组件：
+
+```html
 <$list filter=<$macrocall $name="myfilt" people={{!!family}}/>>
 ```
-这样的写法是错误的
+
+⚠️ 但很遗憾的是，这种写法也是错误的，因为我们不能让一个组件成为另一个组件的属性值，在这个例子中，让`macrocall` 组件成为`list`组件的`filter`的属性值，这种做法是错误的。
+
+好了，那么正确用法是什么呢？
+
+正确用法1：
 
 ```html
 <ul>
@@ -45,4 +60,8 @@ type: text/vnd.tiddlywiki
     </$set>
 </ul>
 ```
+
+思路：因为不管是使用简化的宏调用，还是使用宏调用组件，都无法正确地将转置的结果传递给筛选器，所以，我们可以先将转置得到的值保存到一个变量中，然后在筛选器中调用该变量，得到最终的值。
+
+需要注意的是，在`enlist`筛选器中调用`familyfield`转置的值，使用的是一个尖括号，而不是我们常见的两个，这个跟连续筛选器中使用一个方括号的情况是一样的。
 

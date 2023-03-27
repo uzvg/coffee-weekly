@@ -1,5 +1,5 @@
 created: 20230318144927379
-modified: 20230318150602158
+modified: 20230326121525431
 tags: test
 title: tiddlywiki test for coffee-weekly
 type: text/vnd.tiddlywiki
@@ -24,3 +24,5 @@ $ pacman -Syyu
 这是一个测试，让我们看一下效果
 
 这是一个测试
+
+[[external link test|https://baidu.com]]

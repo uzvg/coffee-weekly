@@ -1,6 +1,8 @@
 color: #21190d
 created: 20230302144841361
-modified: 20230309110540223
-tags: Linux
+modified: 20230326135404470
+tags: [[Linux workflow]]
 title: shell脚本
 type: text/vnd.tiddlywiki
+
+<<list-links filter:"[tag<currentTiddler>]">>

@@ -1,0 +1,9 @@
+created: 20230326145552855
+modified: 20230327072807006
+tags: TableOfContents
+title: Anime
+type: text/vnd.tiddlywiki
+
+Here are animes that get me hooked:
+
+<<list-links filter:"[tag<currentTiddler>sort[rating]]">>

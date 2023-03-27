@@ -1,5 +1,5 @@
 created: 20230303035730746
-modified: 20230324064212851
+modified: 20230326162545278
 tags: $:/tags/Stylesheet
 title: $:/uzvg/Stylesheet
 type: text/vnd.tiddlywiki
@@ -12,11 +12,13 @@ div.tc-tiddler-body {
 /*div.tc-tiddler-frame {
     max-width: 90%;
     border-radius: 8px;
+		border-width: 1.5px;
 }*/
 
 div.tc-tiddler-frame {
     max-width: 68em;
     border-radius: 10px;
+		/*border-width: 2px;*/
     margin-left: auto;
     margin-right: auto;
 		/*background-color: rgba(228,231,230);*/
@@ -27,8 +29,8 @@ div.tc-tiddler-frame {
 }*/
 
 h1,h2,h3, h4, h5, h6 {
-    color: <<colour tiddler-title-foreground>>;
-    font-family: "霞鹜文楷","LXGW WenKai",sans,sans-serif;
+  /*  color: <<colour tiddler-title-foreground>>;*/
+    font-family: "LXGW WenKai","霞鹜文楷","LXGW WenKai",serif,宋体,sans,sans-serif;
 }
 
 h2:not(.tc-title) {
@@ -37,10 +39,16 @@ h2:not(.tc-title) {
     border-bottom: 2px solid <<colour sidebar-foreground>>;
 }
 
-.tc-table-of-contents li li {
+/*.tc-table-of-contents li li {
     line-height: 1.5rem;
+}*/
+
+div.tc-titlebar {
+    font-size: 2rem;
+		font-family: "LXGW WenKai","霞鹜文楷",serif,sans;
 }
 
-/*div.tc-titlebar {
-  background-color: rgba(228,231,230,0.8);
+/*
+div.tc-sidebar-scrollable {
+  background-color: rgba(255,250,240,0.2);
 }*/

@@ -1,8 +1,9 @@
-caption: Linux软件集
+caption: Linux软件
 color: #433a3d
 created: 20230303045111798
-modified: 20230309110810215
-tags: Linux
+list: nvim ncdu aliyunpan-go figlet taskwarrior tiolet
+modified: 20230326144622132
+tags: [[Linux workflow]]
 title: LinuxSoftware
 type: text/vnd.tiddlywiki
 
@@ -19,4 +20,7 @@ type: text/vnd.tiddlywiki
 </ul>
 
 
+
 !!! 常用软件的Linux解决方案：
+
+<<list-links filter:"[tag<currentTiddler>sort[createdat]]">>

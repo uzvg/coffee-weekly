@@ -1,0 +1,44 @@
+created: 20200623052957134
+modified: 20230325153048346
+status: pending
+tags: tiddlywiki
+title: nodejs tiddlywiki使用说明
+type: text/vnd.tiddlywiki
+
+!! 安装及更新：
+
+```bash
+# 安装
+sudo pacman -S nodejs npm
+sudo npm -g tiddlywiki
+
+# 更新
+sudo npm udpate -g tiddlywiki
+```
+
+!! 初始化：
+
+```bash
+#创建一个用于存储tiddlywiki文件的空文件夹
+mkdir wikiFolder
+# 用tiddlywiki的server版本初始化该文件夹
+tiddlywiki path/to/wikiFolder --init server
+# 打开tiddlywiki，默认端口：8080
+tiddlywiki /path/to/wikiFolder --listen
+# 在指定端口打开打开
+tiddlywiki /path/to/wikiFolder --listen port=8090
+```
+
+打开界面：http://127.0.0.1:8080
+
+!! 构建部署：
+
+```bash
+tiddlywiki /path/to/wikiFolder --build index
+```
+
+打开wiki所在根目录下的`output`文件夹，即可看见`index.html`
+
+!! 其他：
+
+nodejs版的tiddlywiki本身附带一些[[小脚本|]]

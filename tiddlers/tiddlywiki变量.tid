@@ -1,6 +1,6 @@
 created: 20230228082508630
 creator: uzvg
-modified: 20230323132909599
+modified: 20230326100545388
 modifier: uzvg
 tags: tiddlywiki
 title: tiddlywiki变量
@@ -43,3 +43,24 @@ value="(This paragraph does not represent the formal opinion of my company.)">
 相关文章：
 
 [[在宏中使用变量]]
+
+!! 在宏中使用变量
+
+```html
+\define partial-name(suffix)
+Tiddler $suffix$
+\end
+
+{{{ [<partial-name "Forty-Two">] }}}
+```
+
+!! 在筛选器中使用变量
+
+```html
+<$set name=	"familyField" value={{!!family}}>
+    <$list filter="[enlist<familyField>]">
+		  {{!!title}}:{{!!Phone}}
+		</$list>
+</$set>
+```
+
