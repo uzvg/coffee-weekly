@@ -1,12 +1,12 @@
 created: 20230303041306105
-modified: 20230321185546871
+modified: 20230408045339999
 tags: tiddlywiki
 title: tiddlywiki筛选器常用操作符
 type: text/vnd.tiddlywiki
 
 tiddlywiki的筛选器操作符非常丰富，此处我们只了解一些常用的操作符，更全面的操作符可查看[[相关官方文档|https://tiddlywiki.com/#Filter%20Operators]]。
 
-!! Links
+!!! Links
 
 * `backlinks[]`:获取链接到输入tiddler的所有tiddler
 ** 如：`[[New tiddler]backlinks[]]`获取所有引用即链接到标题为`New tiddler`的所有tiddler
@@ -23,7 +23,7 @@ tiddlywiki的筛选器操作符非常丰富，此处我们只了解一些常用�
 *** 第一步：`tag[Linux]`,筛选出以Linux为标签的tiddler，如`Linux基础`,`shell脚本`
 *** 第二步：`[tag[linux]tagging[]]`,筛选出以`Linux基础`，`shell脚本`为标签的tiddler
 
-!! Fields:
+!!! Fields:
 
 * `field:fieldname[value]`: 查询所有被输入的tiddler中field名为:`fieldname`，且field值为`value`的tiddler。
 ** //例如//: `[field:phone[888-555-1234]]` 将会返回`张三`，因为只有`张三`的电话号码为`888-555-1234`

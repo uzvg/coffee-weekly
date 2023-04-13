@@ -1,5 +1,6 @@
+allowComment: 1
 created: 20201220065821694
-modified: 20230325151736215
+modified: 20230408035335986
 tags: Linux基础
 title: Linux文件描述符
 type: text/vnd.tiddlywiki
@@ -11,7 +12,7 @@ type: text/vnd.tiddlywiki
 ```
 vim test &
 [2] 36364
-[2]  + 36364 suspended (tty output)  nvim test                                                                                         
+[2]  + 36364 suspended (tty output)  nvim test
 ⇒ ps aux | grep vim
 whoami     36364  0.0  0.0  88816  6468 pts/0    TNl  15:41   0:00 nvim test
 ⇒ ls /proc/36364/fd/ -l
@@ -44,7 +45,7 @@ lrwx------ 1 whoami whoami 64 Dec 20 15:43 8 -> 'anon_inode:[eventfd]'
 lrwx------ 1 whoami whoami 64 Dec 20 15:43 9 -> 'anon_inode:[eventpoll]'
 ```
 
-! Linux的标准文件描述符
+!! Linux的标准文件描述符
 
 |!Number|!Description|!Description|
 |0|STDIN|标准输入|

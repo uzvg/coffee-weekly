@@ -1,0 +1,28 @@
+created: 20230405152243283
+modified: 20230406060357134
+tags: $:/tags/ViewTemplate
+title: $:/plugins/abraham/giscus-for-tiddlywiki-plugin/giscus-comment-template
+type: text/vnd.tiddlywiki
+
+<$set name="disable" filter="[<currentTiddler>is[system]] [all[current]allowComment[0]] +[then[disable-giscus-comments]]" emptyValue="">
+<div class=<<disable>>>
+<hr>
+<$reveal type="nomatch" stateTitle="$:/state/giscus-comments" stateIndex=<<currentTiddler>> text="open">
+  <$button class="tc-btn-invisible tc-tiddlylink giscus-comment-btn" setTitle="$:/state/giscus-comments" setIndex=<<currentTiddler>> setTo="open" default="close">
+  💬 Open giscus comments
+  </$button>
+</$reveal>
+
+<$reveal type="match" stateTitle="$:/state/giscus-comments" stateIndex=<<currentTiddler>> text="open">
+<$button class="giscus-comment-btn" setTitle="$:/state/giscus-comments" setIndex=<<currentTiddler>> setTo="close">
+  💬 Close giscus comments
+</$button>
+<br>
+<h5>
+  If Giscus takes longer than several seconds to load, it may be due to a plugin settings or network problem. 
+  You will need to sign into your Github account to comment.
+</h5>
+<$macrocall $name="giscus" />
+</$reveal>
+</div>
+</$set>

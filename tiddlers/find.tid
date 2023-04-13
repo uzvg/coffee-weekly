@@ -1,11 +1,11 @@
 created: 20200617011130995
-modified: 20230325104733352
+modified: 20230408045522062
 tags: Linux基础
 title: find
 tmap.id: b2d252e4-8fef-4032-aff7-8b94c9d2f5a9
 type: text/vnd.tiddlywiki
 
-!! 命令格式：
+!!! 命令格式：
 
 `find path -option [-print] [-exec  -ok command] {}\;`
 

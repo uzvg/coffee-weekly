@@ -1,7 +1,7 @@
 caption: tiddlywiki宏
 created: 20230228085635319
 creator: uzvg
-modified: 20230323142305882
+modified: 20230327105041312
 modifier: uzvg
 tags: tiddlywiki
 title: Macros
@@ -56,7 +56,7 @@ https://en.wikipedia.org/wiki/$articleName$
 
 宏的引用有两种方式：
 
-!!! 方式一：简化方式
+!!! 方式一：简便方式
 
 引用格式：`<<宏名称 宏参数>>`
 
@@ -70,7 +70,12 @@ https://en.wikipedia.org/wiki/$articleName$
 <$macrocall $name="宏名称" 参数1="参数值" 参数2="参数值"/>
 ```
 
-这种宏组件的调用方式，好像跟简化的调用方式没什么不同，使其实它的最大用处在于在参数值中引用其他宏调用的值。
+所有用简便方式的宏调用，都可以用宏组件实现。
+
+> From the above, it was probably not immediately obvious why you would ever want to write out a macro call the long way. Here's the main reason why: you can pass in other variables or macro calls as parameters to the macro. For instance, maybe we want to link to a few different Wikipedia pages, but use the same link name:
+
+; 但为什么要使用宏组件调用这种看起来比较麻烦的调用方式？
+: 答：这种宏组件的调用方式，可以在宏调用中传递''变量''和其他''宏调用''。
 
 例如，如果我们想在wikipediaLink如下：
 

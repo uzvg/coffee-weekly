@@ -1,5 +1,15 @@
+Links: uzvg.site
+allowComment: 0
 created: 20230326144715264
-modified: 20230326144743854
+modified: 20230406060223479
+modifier: uzvg
+rating: 5
 tags: coffeeWeekly
 title: 忘记目标，关注体系
 type: text/vnd.tiddlywiki
+
+|!Created at: | <$view field="created" format="date" template="DDD DDth MMM YYYY"/> |
+|!Updated at: | <$view field="modified" format="date" template="DDD DDth MMM YYYY"/> |
+|!Rating: | <<get-rating>> |
+|!Link: | {{!!Links}} |
+

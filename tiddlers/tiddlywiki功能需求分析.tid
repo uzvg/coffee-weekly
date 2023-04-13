@@ -1,0 +1,54 @@
+created: 20230326082740676
+modified: 20230402025713242
+tags: tiddlywiki
+title: tiddlywiki功能需求分析
+type: text/vnd.tiddlywiki
+
+!! 内容：
+
+* 技术文章
+** Linux workflow
+*** Linux 基础
+*** Linux Shell
+** Linux software
+*** Rating
+*** softwarre links
+** Tiddlywiki articles
+* Troubleshootings
+** rime input method
+** Vim editor
+
+* coffee-weekly
+** 每周一篇文章
+
+** 可以自动将写的笔记整合到书籍列表下
+** 
+* Picture Gallery
+** Photos took by  [[JiaYu|cyco]]
+** Beautiful wallpaper
+
+!! 需求分析：
+
+* All field backlinks
+** updated at
+** created at
+** rating
+** links
+** classification
+** Related tiddlers
+* Add new tiddler by template
+* Auto classify tiddler
+* Auto show related tiddler
+** Links & backlinks
+* Light/Dark mode toggle
+* Giscuss comment rice
+* About me
+** Github
+** Bilibili
+** Mail
+* Recent tiddlers
+* Rss subscribe
+* Comment system
+* categorize
+* Set at Top
+* 近期文章

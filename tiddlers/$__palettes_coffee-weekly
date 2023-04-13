@@ -2,7 +2,7 @@ alert-background: <<colour background>>
 alert-border: <<colour very-muted-foreground>>
 alert-highlight: <<colour very-muted-foreground>>
 alert-muted-foreground: <<colour muted-foreground>>
-background: #fff1e0
+background: rgb(255, 241, 229)
 blockquote-bar: <<colour page-background>>
 button-background: transparent
 button-foreground: inherit
@@ -10,25 +10,25 @@ button-border: <<colour tag-background>>
 code-background: #ffedd8
 code-border: #e6ccb2
 code-foreground: #bc4749
-dirty-indicator: #bf1e2e
+dirty-indicator: #990f3d
 download-background: <<colour primary>>
 download-foreground: <<colour background>>
 dragger-background: <<colour foreground>>
 dragger-foreground: <<colour background>>
-dropdown-background: #FFFFFF
+dropdown-background: <<colour background>>
 dropdown-border: <<colour dropdown-background>>
 dropdown-tab-background-selected: <<colour dropdown-background>>
-dropdown-tab-background: #F5F5F5
-dropzone-background: <<colour tag-background>>
+dropdown-tab-background: <<colour background>>
+dropzone-background: <<colour background>>
 external-link-background-hover: transparent
 external-link-background-visited: transparent
 external-link-background: transparent
-external-link-foreground-hover: #2b9348
-external-link-foreground-visited: 
-external-link-foreground: #007f5f
-foreground: rgba(0, 0, 0, 0.75)
+external-link-foreground-hover: #175a61
+external-link-foreground-visited: <<colour external-link-foreground>>
+external-link-foreground: #0d7680
+foreground: #262a33
 highlight-background: transparent
-highlight-foreground: #31572c
+highlight-foreground: #d74a49
 message-background: <<colour background>>
 message-border: <<colour very-muted-foreground>>
 message-foreground: rgba(0, 0, 0, 0.54)
@@ -41,29 +41,29 @@ modal-header-border: <<colour very-muted-foreground>>
 muted-foreground: rgba(0, 0, 0, 0.84)
 notification-background: <<colour dropdown-background>>
 notification-border: <<colour dropdown-background>>
-page-background: #ffffff
+page-background: #f2dfce
 pre-background: #ede0d4
-pre-border: #007f5f
-primary: #007f5f
+pre-border: #0d7680
+primary: #0d7680
 select-tag-background: <<colour background>>
 select-tag-foreground: <<colour foreground>>
 sidebar-button-foreground: <<colour foreground>>
-sidebar-controls-foreground-hover: #007f5f
+sidebar-controls-foreground-hover: #0d7680
 sidebar-controls-foreground: <<colour foreground>>
-sidebar-foreground-shadow: rgba(0,0,0,0.08)
-sidebar-foreground: #bf1e2e
-sidebar-muted-foreground-hover: #007f5f
-sidebar-muted-foreground: #bf1e2e
-sidebar-tab-background-selected: transparent
+sidebar-foreground-shadow: rgba(0,0,0,0.1)
+sidebar-foreground: #262a33
+sidebar-muted-foreground-hover: #0d7680
+sidebar-muted-foreground: #990f3d
+sidebar-tab-background-selected: #990f3d
 sidebar-tab-background: transparent
-sidebar-tab-border-selected: <<colour table-border>>
+sidebar-tab-border-selected: #990f3d
 sidebar-tab-border: transparent
 sidebar-tab-divider: transparent
-sidebar-tab-foreground-selected: #007f5f
-sidebar-tab-foreground: rgba(0, 0, 0, 1)
-sidebar-tiddler-link-foreground-hover: #007f5f
+sidebar-tab-foreground-selected: #ffffff
+sidebar-tab-foreground: #000000
+sidebar-tiddler-link-foreground-hover: #0d7680
 sidebar-tiddler-link-foreground: rgba(0,0,0,1)
-site-title-foreground: #bf1e2e
+site-title-foreground: #990f3d
 static-alert-foreground: #aaaaaa
 tab-background-selected: transparent
 tab-background: transparent
@@ -72,28 +72,28 @@ tab-border: transparent
 tab-divider: <<colour table-border>>
 tab-foreground-selected: rgba(0, 0, 0, 0.87)
 tab-foreground: rgba(0, 0, 0, 0.54)
-table-border: #007f5f
+table-border: #000000
 table-footer-background: <<colour tiddler-editor-fields-odd>>
 table-header-background: <<colour tiddler-editor-fields-even>>
-tag-background: #007f5f
+tag-background: #0d7680
 tag-foreground: <<colour button-foreground>>
 tiddler-background: <<colour background>>
-tiddler-border: #bf1e2e
+tiddler-border: transparent
 tiddler-controls-foreground-hover: <<colour sidebar-controls-foreground-hover>>
 tiddler-controls-foreground-selected: <<colour sidebar-controls-foreground-hover>>
 tiddler-controls-foreground: <<colour sidebar-controls-foreground>>
 tiddler-editor-background: transparent
 tiddler-editor-border-image: 
-tiddler-editor-border: #bf1e2e
+tiddler-editor-border: #000000
 tiddler-editor-fields-even: rgba(0, 0, 0, 0.1)
 tiddler-editor-fields-odd: rgba(0, 0, 0, 0.04)
-tiddler-info-background: #F5F5F5
-tiddler-info-border: #F5F5F5
-tiddler-info-tab-background: #fff1e0
+tiddler-info-background: 
+tiddler-info-border: #262a33
+tiddler-info-tab-background: transparent
 tiddler-link-background: <<colour background>>
 tiddler-link-foreground: <<colour primary>>
 tiddler-subtitle-foreground: <<colour muted-foreground>>
-tiddler-title-foreground: #bf1e2e
+tiddler-title-foreground: #990f3d
 toolbar-new-button: 
 toolbar-options-button: 
 toolbar-save-button: 

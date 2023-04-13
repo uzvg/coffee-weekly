@@ -1,0 +1,8 @@
+allowComment: 0
+created: 20230405150135697
+modified: 20230405152550168
+tags: test
+title: allowComment
+type: text/vnd.tiddlywiki
+
+<$list filter="[all[current]allowComment[1]then[make some test]]"/>

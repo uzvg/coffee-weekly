@@ -1,6 +1,6 @@
 created: 20230326174649557
-modified: 20230326183244675
+modified: 20230406102618018
 title: $:/config/giscus/theme/custom-theme-url
 type: text/vnd.tiddlywiki
 
-https://raw.codehub.cn/p/linux-dotfiles/d/dotfiles/git/raw/main/dark_dimmed.css?token=yc14TDb77Z3ckZPuPDMXg3lWbhEmjDLU45shUq0L03
+https://matloka.com/assets/giscus.css
